@@ -29,5 +29,6 @@
 			<attribute name="maven.scope" value="compile"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/AL20458717/Downloads/testng-6.9.10.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -1,18 +1,20 @@
 package Com.Wipro.Locators;
 
 import Utility.Helper;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
 
 public class Selenium_Assignment_5 {
 	
+	public static void main(String[] args) {
 	
-WebDriver driver;
-	
-	@Test 
-	public void TestNameDemo() {
+
 		
 		//Launching Chrome Brouser and URL
-		driver = Helper.startbrouser("Google Chrome");
+		System.setProperty("webdriver.chrome.driver", "C:\\SDET Training\\Selenium_Locators\\Driver\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
 		driver.navigate().to("https://demo.opencart.com/index.php?route=account/register&language=en-gb");
 		
 		//Enter All Mandatory fields like....First Name, Last Name, Email and Password
@@ -24,7 +26,7 @@ WebDriver driver;
 		driver.findElement(By.name("agree")).click();
 		
 		//Clicking on Continue button
-		driver.findElement(By.xpth("//button[@type='submit']")).click();
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
 		
 		//Verify Home Page Title
 		String title=driver.getTitle();
@@ -40,6 +42,7 @@ WebDriver driver;
 		driver.findElement(By.id("input-email")).sendKeys("alambashakoutal@gmail.com");
 		driver.findElement(By.id("input-password")).sendKeys("Alambasha1618");
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
+		
 		
 		//Validating 
 		title= driver.getTitle();
